@@ -3,11 +3,12 @@
   gather_facts: no
   vars:
     host_name: 10.33.44.55
+    path_file: /root/testing_larry
   tasks:
 
     - name: "testing option to change host for a file in multiple servers"
       replace:
-        path: /root/testing_larry
+        path: '{{ path_file }}'
         regexp: '^\[{{ item.category }}\]\s(.*)host(.*)$'
         replace: '[{{ item.category }}]\n  host=[{{ item.host }}]'
       with_items:
