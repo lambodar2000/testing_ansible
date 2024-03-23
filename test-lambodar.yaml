@@ -1,0 +1,15 @@
+---
+- hosts: test_drivers
+  gather_facts: no
+  vars:
+    host_name: 10.33.44.55
+  tasks:
+
+    - name: "testing option to change host for a file in multiple servers"
+      replace:
+        path: /root/testing_larry
+        regexp: '^\[{{ item.category }}\]\s(.*)host(.*)$'
+        replace: '[{{ item.category }}]\n  host=[{{ item.host }}]'
+      with_items:
+          - { category: 'host_name', host: '{{ host_name }}' }
+ 

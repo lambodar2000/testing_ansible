@@ -1,0 +1,15 @@
+---
+ansible_user: <replace with your host user> 
+ansible_become: yes
+ansible_become_method: sudo
+ansible_become_user: root
+ansible_host_key_checking: no
+
+firewall:
+  - previous: replaced   # Remove any existing configuration
+  - service: ssh
+    state: enabled
+# keep adding if more firewall options
+
+admin_ssh_keys:
+  - <add your key here>
