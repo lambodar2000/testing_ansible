@@ -8,7 +8,7 @@ Trigger like this: ansible-playbook -vvv -i inventory.ini test-lambodar.yaml -e 
 
 "testing_host" can be modified to any host 
 
-The name of the file that I am changing is testing_larry
+The name of the file that I am changing is testing_larry ( For your convinience I am putting the file in this repo as well :) ) 
 
 The format of the file is as follow:
 [host_name]
