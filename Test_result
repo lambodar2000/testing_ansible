@@ -1,0 +1,20 @@
+I see this erroe when
+
+
+---
+  - name: Transfer file using SCP
+    ansible.builtin.command:
+      cmd: "scp oracle@bcode-xxx-01:/tmp/ray.txt /tmp/"
+
+Error:
+
+fatal: [ALIAS]: FAILED! => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "cmd": "scp oracle@bcode-xxx-01:/tmp/ray.txt /tmp/",
+            "warn": true
+        }
+    },
+    "msg": "Unsupported parameters for (ansible.builtin.command) module: cmd Supported parameters include: _raw_params, _uses_shell, argv, chdir, creates, executable, removes, stdin, stdin_add_newline, strip_empty_ends, warn"
+}
